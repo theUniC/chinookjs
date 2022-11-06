@@ -2,6 +2,7 @@ import {
   Controller,
   Get,
   HttpException,
+  HttpStatus,
   Param,
   ParseIntPipe,
 } from '@nestjs/common';
@@ -22,7 +23,7 @@ export class GetArtistController {
       return await this.queryBus.execute(new GetArtistByIdQuery(id));
     } catch (e) {
       if (e.name === 'ArtistWasNotFound') {
-        throw new HttpException(e.message(), 404);
+        throw new HttpException(e.message(), HttpStatus.NOT_FOUND);
       }
 
       throw e;

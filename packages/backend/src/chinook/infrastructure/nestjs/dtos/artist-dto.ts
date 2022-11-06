@@ -1,17 +1,13 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsNotEmpty } from 'class-validator';
 import { Artist } from '../../../domain/artist';
-import { Field, Int, ObjectType } from '@nestjs/graphql';
 
-@ObjectType()
 export class ArtistDto {
   @ApiProperty()
-  @Field(() => Int, { nullable: true })
   readonly id: number | null;
 
   @ApiProperty()
   @IsNotEmpty()
-  @Field({ nullable: true })
   readonly artistName: string;
 
   constructor(artistName: string, id: number | null = null) {

@@ -8,11 +8,20 @@ import { GetAllArtistsController } from './controllers/artist/get-all-artists.co
 import { PostArtistsController } from './controllers/artist/post-artists.controller';
 import { Album } from '../../domain/album';
 import { CqrsModule } from '@nestjs/cqrs';
-import { ArtistsResolver } from './graphql/resolvers/artists.resolver';
+import { GetArtistController } from './controllers/artist/get-artist.controller';
+import { GetArtistByIdQueryHandler } from '../../application/query/get-artist-by-id/get-artist-by-id.query.handler';
 
-const controllers = [GetAllArtistsController, PostArtistsController];
-const messageHandlers = [CreateArtistCommandHandler, GetAllArtistsQueryHandler];
-const graphqlResolvers = [ArtistsResolver];
+const controllers = [
+  GetAllArtistsController,
+  PostArtistsController,
+  GetArtistController,
+];
+
+const messageHandlers = [
+  CreateArtistCommandHandler,
+  GetAllArtistsQueryHandler,
+  GetArtistByIdQueryHandler,
+];
 
 @Module({
   imports: [TypeOrmModule.forFeature([Artist, Album]), CqrsModule],
@@ -24,7 +33,6 @@ const graphqlResolvers = [ArtistsResolver];
       useExisting: TypeormArtistRepository,
     },
     ...messageHandlers,
-    ...graphqlResolvers,
   ],
 })
 export class ChinookNestjsModule {}
