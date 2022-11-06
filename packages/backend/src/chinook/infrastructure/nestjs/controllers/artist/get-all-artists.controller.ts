@@ -1,5 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
-import { GetAllArtistsQuery } from '../../../application/query/get-all-artists/get-all-artists-query';
+import { GetAllArtistsQuery } from '../../../../application/query/get-all-artists/get-all-artists-query';
 import { ApiTags } from '@nestjs/swagger';
 import { QueryBus } from '@nestjs/cqrs';
 
