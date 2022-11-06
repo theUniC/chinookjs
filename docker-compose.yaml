@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  mysql:
+    image: mysql:8.0.31
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234Abcd
+      MYSQL_USER: chinook
+      MYSQL_PASSWORD: 1234Abcd
+      MYSQL_DATABASE: chinook
+    volumes:
+      - .docker/mysql:/docker-entrypoint-initdb.d
