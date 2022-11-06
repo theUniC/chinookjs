@@ -16,7 +16,7 @@ describe('GetAllArtistsQueryHandler', () => {
   });
 
   it('should return all artists', async function () {
-    const artist = new Artist();
+    const artist = new Artist('artistName');
     await artistsRepository.add(artist);
     const artists = await getAllArtistsQueryHandler.execute(
       new GetAllArtistsQuery(),

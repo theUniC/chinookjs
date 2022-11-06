@@ -20,8 +20,7 @@ export class CreateArtistCommandHandler
       throw new Error(`Artist with name ${artistName} already exists`);
     }
 
-    artist = new Artist();
-    artist.name = artistName;
+    artist = new Artist(artistName);
     await this.artistRepository.add(artist);
   }
 }

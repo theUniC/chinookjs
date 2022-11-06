@@ -16,8 +16,7 @@ describe('CreateArtistCommandHandler', () => {
   });
 
   it('should throw an exception if an artist with the same name already exists', async () => {
-    const existingArtist = new Artist();
-    existingArtist.name = 'existingArtist';
+    const existingArtist = new Artist('existingArtist');
     await artistRepository.add(existingArtist);
 
     await expect(async () => {
@@ -25,6 +24,12 @@ describe('CreateArtistCommandHandler', () => {
         new CreateArtistCommand('existingArtist'),
       );
     }).rejects.toThrowError();
+  });
+
+  it('should throw an exception if the artist name is empty', () => {
+    expect(() => {
+      new Artist('');
+    }).toThrowError();
   });
 
   it('should save the artists to the persistent store', async () => {
