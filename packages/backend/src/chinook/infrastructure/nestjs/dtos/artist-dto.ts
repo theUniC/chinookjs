@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsNotEmpty } from 'class-validator';
-import { Artist } from '../../../domain/artist';
+import { Artist } from '../../../domainmodel/artist';
 
 export class ArtistDto {
   @ApiProperty()

@@ -1,5 +1,5 @@
 import { GetAllArtistsQuery } from './get-all-artists-query';
-import { ArtistRepository } from '../../../domain/artist-repository';
+import { ArtistRepository } from '../../../domainmodel/artist-repository';
 import { Inject } from '@nestjs/common';
 import { IQueryHandler, QueryHandler } from '@nestjs/cqrs';
 

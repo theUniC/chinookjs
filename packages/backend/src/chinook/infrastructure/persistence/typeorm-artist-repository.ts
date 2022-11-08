@@ -1,7 +1,7 @@
-import { ArtistRepository } from '../../domain/artist-repository';
+import { ArtistRepository } from '../../domainmodel/artist-repository';
 import { Injectable } from '@nestjs/common';
 import { Repository } from 'typeorm';
-import { Artist } from '../../domain/artist';
+import { Artist } from '../../domainmodel/artist';
 import { InjectRepository } from '@nestjs/typeorm';
 
 @Injectable()

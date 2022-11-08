@@ -1,5 +1,5 @@
-import { ArtistRepository } from '../../domain/artist-repository';
-import { Artist } from '../../domain/artist';
+import { ArtistRepository } from '../../domainmodel/artist-repository';
+import { Artist } from '../../domainmodel/artist';
 
 export class InmemoryArtistRepository implements ArtistRepository {
   private artists: Artist[] = [];

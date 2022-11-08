@@ -1,8 +1,8 @@
-import { ArtistRepository } from '../../../domain/artist-repository';
+import { ArtistRepository } from '../../../domainmodel/artist-repository';
 import { GetArtistByIdQueryHandler } from './get-artist-by-id.query.handler';
 import { InmemoryArtistRepository } from '../../../infrastructure/persistence/inmemory-artist-repository';
 import { GetArtistByIdQuery } from './get-artist-by-id.query';
-import { Artist } from '../../../domain/artist';
+import { Artist } from '../../../domainmodel/artist';
 
 describe('GetArtistByIdQueryHandler', () => {
   let artistRepository: ArtistRepository;
