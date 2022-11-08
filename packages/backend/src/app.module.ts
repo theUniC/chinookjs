@@ -3,6 +3,9 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ChinookNestjsModule } from './chinook/infrastructure/nestjs/chinook-nestjs-module';
 import { CqrsModule } from '@nestjs/cqrs';
+import { GraphQLModule } from '@nestjs/graphql';
+import { ApolloDriver } from '@nestjs/apollo';
+import { join } from 'node:path';
 
 @Module({
   imports: [
@@ -16,6 +19,11 @@ import { CqrsModule } from '@nestjs/cqrs';
         synchronize: false,
       }),
       inject: [ConfigService],
+    }),
+    GraphQLModule.forRoot({
+      driver: ApolloDriver,
+      autoSchemaFile: join(process.cwd(), 'resources/graphql/schema.gql'),
+      sortSchema: true,
     }),
     CqrsModule,
     ChinookNestjsModule,

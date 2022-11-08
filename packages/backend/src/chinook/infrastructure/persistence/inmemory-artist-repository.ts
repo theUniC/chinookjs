@@ -10,8 +10,8 @@ export class InmemoryArtistRepository implements ArtistRepository {
     return Promise.resolve(undefined);
   }
 
-  all(): Promise<Artist[]> {
-    return Promise.resolve(this.artists);
+  all(offset: number, limit: number): Promise<Artist[]> {
+    return Promise.resolve(this.artists.slice(offset, offset + limit));
   }
 
   byId(id: number): Promise<Artist | null> {

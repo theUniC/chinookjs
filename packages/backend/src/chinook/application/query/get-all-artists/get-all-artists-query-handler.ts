@@ -12,7 +12,7 @@ export class GetAllArtistsQueryHandler
     private readonly artistsRepository: ArtistRepository,
   ) {}
 
-  async execute(_message: GetAllArtistsQuery) {
-    return await this.artistsRepository.all();
+  async execute({ limit, offset }: GetAllArtistsQuery) {
+    return await this.artistsRepository.all(offset, limit);
   }
 }

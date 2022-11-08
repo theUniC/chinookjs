@@ -23,7 +23,10 @@ export class TypeormArtistRepository implements ArtistRepository {
     return await this.typeormArtistRepository.findOneBy({ id });
   }
 
-  async all(): Promise<Artist[]> {
-    return await this.typeormArtistRepository.find();
+  async all(offset: number, limit: number): Promise<Artist[]> {
+    return await this.typeormArtistRepository.find({
+      skip: offset,
+      take: limit,
+    });
   }
 }

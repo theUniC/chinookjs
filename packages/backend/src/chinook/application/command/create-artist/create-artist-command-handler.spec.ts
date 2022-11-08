@@ -37,6 +37,6 @@ describe('CreateArtistCommandHandler', () => {
       new CreateArtistCommand('nonExistingArtist'),
     );
 
-    expect((await artistRepository.all()).length).toBe(1);
+    expect((await artistRepository.all(0, 10)).length).toBe(1);
   });
 });
