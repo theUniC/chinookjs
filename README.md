@@ -4,10 +4,10 @@
 
 1. Clone the code
 2. ```cd chinookjs```
-2. Start services up 👉 `docker compose up -d`
-3. Install backend packages 👉 `yarn workspace backend install`
-4. Copy the env variables: ```cp packages/backend/.env.dist packages/backend/.env```
-4. Start the backend 👉 `yarn workspace backend start:dev`
+3. Start services up 👉 `docker compose up -d`
+4. Install backend packages 👉 `yarn workspace backend install`
+5. Copy the env variables: ```cp packages/backend/.env.dist packages/backend/.env```
+6. Start the backend 👉 `yarn workspace backend start:dev`
 
 ## Backend URLs
 
