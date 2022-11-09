@@ -1,4 +1,4 @@
-import { Body, Controller, HttpCode, Post } from '@nestjs/common';
+import { Body, Controller, HttpCode, HttpStatus, Post } from '@nestjs/common';
 import { CreateArtistCommand } from '../../../../application/command/create-artist/create-artist-command';
 import { ApiCreatedResponse, ApiTags } from '@nestjs/swagger';
 import { CommandBus } from '@nestjs/cqrs';
@@ -10,7 +10,7 @@ export class PostArtistsController {
   constructor(readonly commandBus: CommandBus) {}
 
   @Post()
-  @HttpCode(204)
+  @HttpCode(HttpStatus.CREATED)
   @ApiCreatedResponse()
   async handleRequest(@Body() { artistName }: ArtistDto) {
     await this.commandBus.execute(new CreateArtistCommand(artistName));

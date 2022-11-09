@@ -12,7 +12,6 @@ async function bootstrap() {
   const config = new DocumentBuilder()
     .setTitle('Chinook OpenAPI')
     .setVersion('1.0')
-    .addTag('chinook')
     .build();
 
   const document = SwaggerModule.createDocument(app, config);
