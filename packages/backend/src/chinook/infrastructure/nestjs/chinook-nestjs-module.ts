@@ -1,7 +1,5 @@
 import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
 import { Artist } from '../../domainmodel/artist';
-import { TypeormArtistRepository } from '../persistence/typeorm-artist-repository';
 import { CreateArtistCommandHandler } from '../../application/command/create-artist/create-artist-command-handler';
 import { GetAllArtistsQueryHandler } from '../../application/query/get-all-artists/get-all-artists-query-handler';
 import { GetAllArtistsController } from './controllers/artist/get-all-artists.controller';

@@ -1,13 +1,11 @@
 import { Module } from '@nestjs/common';
-import { ConfigModule, ConfigService } from '@nestjs/config';
-import { TypeOrmModule } from '@nestjs/typeorm';
+import { ConfigModule } from '@nestjs/config';
 import { ChinookNestjsModule } from './chinook/infrastructure/nestjs/chinook-nestjs-module';
 import { CqrsModule } from '@nestjs/cqrs';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver } from '@nestjs/apollo';
 import { join } from 'node:path';
 import { MikroOrmModule } from '@mikro-orm/nestjs';
-import { TsMorphMetadataProvider } from '@mikro-orm/reflection';
 
 @Module({
   imports: [
