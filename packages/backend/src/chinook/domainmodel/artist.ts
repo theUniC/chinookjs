@@ -1,13 +1,13 @@
-import { Column, Entity, OneToMany, PrimaryColumn } from 'typeorm';
 import { Album } from './album';
 import { strict as assert } from 'assert';
+import { Entity, OneToMany, PrimaryKey, Property } from '@mikro-orm/core';
 
-@Entity('Artist')
+@Entity({ tableName: 'Artist' })
 export class Artist {
-  @PrimaryColumn({ name: 'ArtistId' })
+  @PrimaryKey({ name: 'ArtistId' })
   id: number;
 
-  @Column({ name: 'Name' })
+  @Property({ name: 'Name' })
   name: string;
 
   @OneToMany(() => Album, (album) => album.artist)

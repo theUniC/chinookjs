@@ -6,20 +6,13 @@ import { CqrsModule } from '@nestjs/cqrs';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver } from '@nestjs/apollo';
 import { join } from 'node:path';
+import { MikroOrmModule } from '@mikro-orm/nestjs';
+import { TsMorphMetadataProvider } from '@mikro-orm/reflection';
 
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    TypeOrmModule.forRootAsync({
-      imports: [ConfigModule],
-      useFactory: async (config: ConfigService) => ({
-        type: 'mysql',
-        url: config.get<string>('DATABASE_URL'),
-        autoLoadEntities: true,
-        synchronize: false,
-      }),
-      inject: [ConfigService],
-    }),
+    MikroOrmModule.forRoot({ autoLoadEntities: true }), // The rest of configuration comes from environment variables
     GraphQLModule.forRoot({
       driver: ApolloDriver,
       autoSchemaFile: join(process.cwd(), 'resources/graphql/schema.gql'),

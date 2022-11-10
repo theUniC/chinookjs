@@ -1,15 +1,14 @@
-import { Column, Entity, ManyToOne, PrimaryColumn, JoinColumn } from 'typeorm';
 import { Artist } from './artist';
+import { Entity, ManyToOne, PrimaryKey, Property } from '@mikro-orm/core';
 
-@Entity('Album')
+@Entity({ tableName: 'Album' })
 export class Album {
-  @PrimaryColumn({ name: 'AlbumId' })
+  @PrimaryKey({ name: 'AlbumId' })
   id: number;
 
-  @Column({ name: 'Title' })
+  @Property({ name: 'Title' })
   title: string;
 
-  @ManyToOne(() => Artist, (artist) => artist.albums)
-  @JoinColumn({ name: 'ArtistId' })
+  @ManyToOne(() => Artist, { joinColumn: 'ArtistId' })
   artist: Artist;
 }

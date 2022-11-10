@@ -11,6 +11,8 @@ import { CqrsModule } from '@nestjs/cqrs';
 import { GetArtistController } from './controllers/artist/get-artist.controller';
 import { GetArtistByIdQueryHandler } from '../../application/query/get-artist-by-id/get-artist-by-id.query.handler';
 import { ArtistResolver } from './graphql/resolvers/artist.resolver';
+import { MikroOrmModule } from '@mikro-orm/nestjs';
+import { MikroormArtistRepository } from '../persistence/mikroorm-artist-repository';
 
 const controllers = [
   GetAllArtistsController,
@@ -27,13 +29,13 @@ const messageHandlers = [
 const graphqlResolvers = [ArtistResolver];
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Artist, Album]), CqrsModule],
+  imports: [MikroOrmModule.forFeature([Artist, Album]), CqrsModule],
   controllers,
   providers: [
-    TypeormArtistRepository,
+    MikroormArtistRepository,
     {
       provide: 'ARTISTS_REPOSITORY',
-      useExisting: TypeormArtistRepository,
+      useExisting: MikroormArtistRepository,
     },
     ...messageHandlers,
     ...graphqlResolvers,
