@@ -1,6 +1,12 @@
 import { Album } from './album';
 import { strict as assert } from 'assert';
-import { Entity, OneToMany, PrimaryKey, Property } from '@mikro-orm/core';
+import {
+  Collection,
+  Entity,
+  OneToMany,
+  PrimaryKey,
+  Property,
+} from '@mikro-orm/core';
 
 @Entity({ tableName: 'Artist' })
 export class Artist {
@@ -10,8 +16,8 @@ export class Artist {
   @Property({ name: 'Name' })
   name: string;
 
-  @OneToMany(() => Album, (album) => album.artist)
-  albums: Album[];
+  @OneToMany(() => Album, (album) => album.getArtist())
+  albums = new Collection<Album>(this);
 
   constructor(name: string) {
     this.assertNameIsNotEmpty(name);
@@ -19,7 +25,12 @@ export class Artist {
     this.name = name;
   }
 
-  private assertNameIsNotEmpty(name: string) {
+  addAlbum = (album: Album) => {
+    album.setArtist(this);
+    this.albums.add(album);
+  };
+
+  private assertNameIsNotEmpty = (name: string) => {
     assert.notEqual(name, '');
-  }
+  };
 }

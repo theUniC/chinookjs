@@ -1136,12 +1136,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mikro-orm/cli@npm:^5.5.2":
-  version: 5.5.2
-  resolution: "@mikro-orm/cli@npm:5.5.2"
+"@mikro-orm/cli@npm:^5.5.3":
+  version: 5.5.3
+  resolution: "@mikro-orm/cli@npm:5.5.3"
   dependencies:
-    "@mikro-orm/core": ~5.5.2
-    "@mikro-orm/knex": ~5.5.2
+    "@mikro-orm/core": ^5.5.3
+    "@mikro-orm/knex": ^5.5.3
     fs-extra: 10.1.0
     tsconfig-paths: 4.1.0
     yargonaut: 1.1.4
@@ -1181,20 +1181,20 @@ __metadata:
   bin:
     mikro-orm: cli.js
     mikro-orm-esm: esm.js
-  checksum: f04d1db1f5ebfff555602a4a99836162508d05ec0542674cc36d43bfd8af8c9fb7504c1948540a895149d2d05d915eaccda7a87101870b98ba6f1c8b66c5961a
+  checksum: f212f534ff457f3ea4ec080707643b3227af38cf72fadbf64a0e97577656fe7bf8ac15a44eb7f7b28eea21b1b8b8ed00d5f96c28a87e083b9751802845680fcf
   languageName: node
   linkType: hard
 
-"@mikro-orm/core@npm:^5.5.2, @mikro-orm/core@npm:~5.5.2":
-  version: 5.5.2
-  resolution: "@mikro-orm/core@npm:5.5.2"
+"@mikro-orm/core@npm:^5.5.3":
+  version: 5.5.3
+  resolution: "@mikro-orm/core@npm:5.5.3"
   dependencies:
     acorn-loose: 8.3.0
     acorn-walk: 8.2.0
     dotenv: 16.0.3
     fs-extra: 10.1.0
     globby: 11.0.4
-    mikro-orm: ~5.5.2
+    mikro-orm: ^5.5.3
     reflect-metadata: 0.1.13
   peerDependencies:
     "@mikro-orm/better-sqlite": ^5.0.0
@@ -1228,13 +1228,25 @@ __metadata:
       optional: true
     "@mikro-orm/sqlite":
       optional: true
-  checksum: 070c1869b628c599f0c4d4f2427a026eaa6e18cc5e314674d78e867d3f623e832634c020fd74539f58eeeabb8c02af3e43a71cab73cf9f6d1395eaa2f35b75cd
+  checksum: 54b1f709c687fdf2152a4f7ab41b2c9bf88a7493edc69c2f47d1f0a6f6d7eb5c1fb055da5e393020f31f68acce7b5854197514bf4094220c87581e3e276564a2
   languageName: node
   linkType: hard
 
-"@mikro-orm/knex@npm:~5.5.2":
-  version: 5.5.2
-  resolution: "@mikro-orm/knex@npm:5.5.2"
+"@mikro-orm/entity-generator@npm:^5.5.3":
+  version: 5.5.3
+  resolution: "@mikro-orm/entity-generator@npm:5.5.3"
+  dependencies:
+    "@mikro-orm/knex": ^5.5.3
+    fs-extra: 10.1.0
+  peerDependencies:
+    "@mikro-orm/core": ^5.0.0
+  checksum: f885c068838a017631f8113e98393040246c9473c93629f92c10b1b240f201defb36899a2a55799ad0cc7abdc1517e01344b0a669d3f352b451dd9f76aafd38c
+  languageName: node
+  linkType: hard
+
+"@mikro-orm/knex@npm:^5.5.3":
+  version: 5.5.3
+  resolution: "@mikro-orm/knex@npm:5.5.3"
   dependencies:
     fs-extra: 10.1.0
     knex: 2.3.0
@@ -1266,15 +1278,15 @@ __metadata:
       optional: true
     sqlite3:
       optional: true
-  checksum: c339adecb82d25e5d2ec1c3cc710c48378572e3ef75a6a0e28e59536dd6bfd919cce76d1f73f95d79631efcc0a4afb7e5efe90731b1fec396b1667b2a4f512af
+  checksum: 787d5e4a6bb55763b6451ce9220912549fe6db6aa9504cf5574586c46d8c6367c42d5e05bb3551e68325af5ad840c31e2a34358c397bab9ea2a08c42afa65ae5
   languageName: node
   linkType: hard
 
-"@mikro-orm/mysql@npm:^5.5.2":
-  version: 5.5.2
-  resolution: "@mikro-orm/mysql@npm:5.5.2"
+"@mikro-orm/mysql@npm:^5.5.3":
+  version: 5.5.3
+  resolution: "@mikro-orm/mysql@npm:5.5.3"
   dependencies:
-    "@mikro-orm/knex": ~5.5.2
+    "@mikro-orm/knex": ^5.5.3
     mysql2: 2.3.3
   peerDependencies:
     "@mikro-orm/core": ^5.0.0
@@ -1288,7 +1300,7 @@ __metadata:
       optional: true
     "@mikro-orm/seeder":
       optional: true
-  checksum: de813b8a7a0eb6ed9fb9f0353f997b67d3446f2e94b8066328a35e0244311fc443c251825528033dced76af7eb6a4ff28c1ad1ffc8fec79b2a7a8997368671a5
+  checksum: 448b18e2935a75dccf346a3afd0f36da9d646c6fe07343862e06982445a638369f271263f16edb7fb123d12371f3ea86e55806cd01aa34e402739b2144900ba7
   languageName: node
   linkType: hard
 
@@ -1337,15 +1349,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mikro-orm/reflection@npm:^5.5.2":
-  version: 5.5.2
-  resolution: "@mikro-orm/reflection@npm:5.5.2"
+"@mikro-orm/reflection@npm:^5.5.3":
+  version: 5.5.3
+  resolution: "@mikro-orm/reflection@npm:5.5.3"
   dependencies:
     globby: 11.0.4
     ts-morph: 16.0.0
   peerDependencies:
     "@mikro-orm/core": ^5.0.0
-  checksum: 16ce29cc4dc74254b310688e98e6d8ad06e6767b1b1e1d6d1d783bdfd41f46280c92d76129a5653284ba79a7fcadf971219020f187814f0f327bde8e50c80f1f
+  checksum: 39f5c94f97d5a0ed767c1430962041797e470e896134d8ff10fb1202c2d0c13b3bba6386c8d51e7d21982a8f4539bca47f3f3bd4447f82777260a817a2f84338
   languageName: node
   linkType: hard
 
@@ -2023,6 +2035,13 @@ __metadata:
   version: 2.8.12
   resolution: "@types/cors@npm:2.8.12"
   checksum: 8c45f112c7d1d2d831b4b266f2e6ed33a1887a35dcbfe2a18b28370751fababb7cd045e745ef84a523c33a25932678097bf79afaa367c6cb3fa0daa7a6438257
+  languageName: node
+  linkType: hard
+
+"@types/email-validator@npm:^1.0.6":
+  version: 1.0.30
+  resolution: "@types/email-validator@npm:1.0.30"
+  checksum: 4a7d5ab10fd60341fb99e8a5630d4ec9936f16967fb76bf0402de38c954321d6bc70fed2b32ff4bae5f7dd9402797d204ef3c41145e94c5f9565f3a0430dd6f8
   languageName: node
   linkType: hard
 
@@ -3146,11 +3165,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "backend@workspace:packages/backend"
   dependencies:
-    "@mikro-orm/cli": ^5.5.2
-    "@mikro-orm/core": ^5.5.2
-    "@mikro-orm/mysql": ^5.5.2
+    "@mikro-orm/cli": ^5.5.3
+    "@mikro-orm/core": ^5.5.3
+    "@mikro-orm/entity-generator": ^5.5.3
+    "@mikro-orm/mysql": ^5.5.3
     "@mikro-orm/nestjs": ^5.1.2
-    "@mikro-orm/reflection": ^5.5.2
+    "@mikro-orm/reflection": ^5.5.3
     "@nestjs/apollo": ^10.1.4
     "@nestjs/cli": ^9.0.0
     "@nestjs/common": ^9.0.0
@@ -3162,6 +3182,7 @@ __metadata:
     "@nestjs/schematics": ^9.0.0
     "@nestjs/swagger": ^6.1.3
     "@nestjs/testing": ^9.0.0
+    "@types/email-validator": ^1.0.6
     "@types/express": ^4
     "@types/jest": 28.1.8
     "@types/node": ^16.0.0
@@ -3173,6 +3194,7 @@ __metadata:
     apollo-server-express: ^3.11.1
     class-transformer: ^0.5.1
     class-validator: ^0.13.2
+    email-validator: ^2.0.4
     eslint: ^8.0.1
     eslint-config-prettier: ^8.3.0
     eslint-plugin-prettier: ^4.0.0
@@ -4079,6 +4101,13 @@ __metadata:
   version: 1.4.284
   resolution: "electron-to-chromium@npm:1.4.284"
   checksum: be496e9dca6509dbdbb54dc32146fc99f8eb716d28a7ee8ccd3eba0066561df36fc51418d8bd7cf5a5891810bf56c0def3418e74248f51ea4a843d423603d10a
+  languageName: node
+  linkType: hard
+
+"email-validator@npm:^2.0.4":
+  version: 2.0.4
+  resolution: "email-validator@npm:2.0.4"
+  checksum: e702fee24e1b9efb7e6a84abb309bebdb4ddde137fdb99a61e24bd82ac0b605be34e191b1c4d04fbc855be7b94cad967f932a456c0def2240303881f4e388f2d
   languageName: node
   linkType: hard
 
@@ -6786,10 +6815,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mikro-orm@npm:~5.5.2":
-  version: 5.5.2
-  resolution: "mikro-orm@npm:5.5.2"
-  checksum: b2a5020458e44b1d91e7a01c3d294896c4936c6f289101a6aa3f002f1ede0cdd07ecabfe24b8a4cddeb678ef83fd44ca0d837f2e2ffa83f53a40848d61adbc8b
+"mikro-orm@npm:^5.5.3":
+  version: 5.5.3
+  resolution: "mikro-orm@npm:5.5.3"
+  checksum: 53e86b099870de114d37d239ea14855ffa6da3961afe6af2615884e2fe6edea5ad0eb83f9848c5cca73f587b34c1cf5dbbea47a8990b053a745bc8eb70b89337
   languageName: node
   linkType: hard
 
