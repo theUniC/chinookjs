@@ -1,7 +1,7 @@
 import { CreateArtistCommand } from './create-artist-command';
-import { ArtistRepository } from '../../../domainmodel/artist-repository';
+import { ArtistRepository } from '../../../domainmodel/artist/artist-repository';
 import { Inject } from '@nestjs/common';
-import { Artist } from '../../../domainmodel/artist';
+import { Artist } from '../../../domainmodel/artist/artist';
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 
 @CommandHandler(CreateArtistCommand)

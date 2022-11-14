@@ -1,5 +1,5 @@
 import { Entity, ManyToOne, PrimaryKey, Property } from '@mikro-orm/core';
-import { Album } from './album';
+import { Album } from '../album/album';
 import { Genre } from './genre';
 import { MediaType } from './media-type';
 

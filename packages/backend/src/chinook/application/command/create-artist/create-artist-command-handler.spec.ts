@@ -1,7 +1,7 @@
 import { CreateArtistCommandHandler } from './create-artist-command-handler';
 import { InmemoryArtistRepository } from '../../../infrastructure/persistence/inmemory-artist-repository';
-import { ArtistRepository } from '../../../domainmodel/artist-repository';
-import { Artist } from '../../../domainmodel/artist';
+import { ArtistRepository } from '../../../domainmodel/artist/artist-repository';
+import { Artist } from '../../../domainmodel/artist/artist';
 import { CreateArtistCommand } from './create-artist-command';
 
 describe('CreateArtistCommandHandler', () => {

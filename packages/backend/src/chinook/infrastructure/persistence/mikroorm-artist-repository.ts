@@ -1,5 +1,5 @@
-import { Artist } from 'src/chinook/domainmodel/artist';
-import { ArtistRepository } from '../../domainmodel/artist-repository';
+import { Artist } from 'src/chinook/domainmodel/artist/artist';
+import { ArtistRepository } from '../../domainmodel/artist/artist-repository';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@mikro-orm/nestjs';
 import { EntityManager, EntityRepository } from '@mikro-orm/core';

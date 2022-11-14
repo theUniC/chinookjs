@@ -1,5 +1,5 @@
 import { Entity, ManyToOne, PrimaryKey, Property } from '@mikro-orm/core';
-import { Employee } from './employee';
+import { Employee } from '../employee/employee';
 import { strict as assert } from 'assert';
 import * as EmailValidator from 'email-validator';
 

@@ -1,9 +1,9 @@
 import { IQueryHandler, QueryHandler } from '@nestjs/cqrs';
 import { GetArtistByIdQuery } from './get-artist-by-id.query';
-import { ArtistRepository } from '../../../domainmodel/artist-repository';
+import { ArtistRepository } from '../../../domainmodel/artist/artist-repository';
 import { Inject } from '@nestjs/common';
-import { Artist } from '../../../domainmodel/artist';
-import { ArtistWasNotFound } from '../../../domainmodel/artist-was-not-found';
+import { Artist } from '../../../domainmodel/artist/artist';
+import { ArtistWasNotFound } from '../../../domainmodel/artist/artist-was-not-found';
 
 @QueryHandler(GetArtistByIdQuery)
 export class GetArtistByIdQueryHandler

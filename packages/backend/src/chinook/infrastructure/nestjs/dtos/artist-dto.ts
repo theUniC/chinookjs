@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsNotEmpty } from 'class-validator';
-import { Artist } from '../../../domainmodel/artist';
+import { Artist } from '../../../domainmodel/artist/artist';
 import { Field, Int, ObjectType } from '@nestjs/graphql';
 
 @ObjectType()

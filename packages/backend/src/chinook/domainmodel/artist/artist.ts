@@ -1,4 +1,4 @@
-import { Album } from './album';
+import { Album } from '../album/album';
 import { strict as assert } from 'assert';
 import {
   Collection,

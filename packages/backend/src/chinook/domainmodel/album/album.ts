@@ -1,4 +1,4 @@
-import { Artist } from './artist';
+import { Artist } from '../artist/artist';
 import { Entity, ManyToOne, PrimaryKey, Property } from '@mikro-orm/core';
 import { strict as assert } from 'assert';
 

@@ -1,7 +1,7 @@
 import { GetAllArtistsQueryHandler } from './get-all-artists-query-handler';
-import { ArtistRepository } from '../../../domainmodel/artist-repository';
+import { ArtistRepository } from '../../../domainmodel/artist/artist-repository';
 import { InmemoryArtistRepository } from '../../../infrastructure/persistence/inmemory-artist-repository';
-import { Artist } from '../../../domainmodel/artist';
+import { Artist } from '../../../domainmodel/artist/artist';
 import { GetAllArtistsQuery } from './get-all-artists-query';
 
 describe('GetAllArtistsQueryHandler', () => {

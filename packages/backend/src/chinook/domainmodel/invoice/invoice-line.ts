@@ -1,6 +1,6 @@
 import { Entity, ManyToOne, PrimaryKey, Property } from '@mikro-orm/core';
 import { Invoice } from './invoice';
-import { Track } from './track';
+import { Track } from '../track/track';
 
 @Entity({ tableName: 'InvoiceLine' })
 export class InvoiceLine {

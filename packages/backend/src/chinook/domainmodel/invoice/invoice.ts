@@ -1,5 +1,12 @@
-import { Entity, ManyToOne, PrimaryKey, Property } from '@mikro-orm/core';
-import { Customer } from './customer';
+import {
+  DecimalType,
+  Entity,
+  ManyToOne,
+  PrimaryKey,
+  Property,
+  Type,
+} from '@mikro-orm/core';
+import { Customer } from '../customer/customer';
 
 @Entity({ tableName: 'Invoice' })
 export class Invoice {
@@ -31,6 +38,10 @@ export class Invoice {
   @Property({ fieldName: 'BillingPostalCode', length: 10, nullable: true })
   billingPostalCode?: string;
 
-  @Property({ fieldName: 'Total', columnType: 'decimal(10,2)' })
-  total!: string;
+  @Property({
+    fieldName: 'Total',
+    type: DecimalType,
+    columnType: 'decimal(10,2)',
+  })
+  total!: number;
 }
