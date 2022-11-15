@@ -19,10 +19,13 @@ export class Album {
     this.title = title;
   }
 
-  getArtist = (): Artist => this.artist;
-  setArtist = (artist: Artist): void => {
+  getArtist() {
+    return this.artist;
+  }
+
+  setArtist(artist: Artist): void {
     this.artist = artist;
-  };
+  }
 
   private assertTitleIsNotEmpty = (title: string): void => {
     assert(title.length > 0);

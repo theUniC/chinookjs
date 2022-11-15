@@ -16,7 +16,8 @@ export class Artist {
   @Property({ name: 'Name' })
   name: string;
 
-  @OneToMany(() => Album, (album) => album.getArtist())
+  // @ts-ignore
+  @OneToMany(() => Album, (album) => album.artist)
   albums = new Collection<Album>(this);
 
   constructor(name: string) {
@@ -25,10 +26,14 @@ export class Artist {
     this.name = name;
   }
 
-  addAlbum = (album: Album) => {
+  addAlbum(album: Album) {
     album.setArtist(this);
     this.albums.add(album);
-  };
+  }
+
+  changeName(newName: string) {
+    this.name = newName;
+  }
 
   private assertNameIsNotEmpty = (name: string) => {
     assert.notEqual(name, '');

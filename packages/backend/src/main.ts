@@ -8,6 +8,7 @@ async function bootstrap() {
 
   app.setGlobalPrefix('api');
   app.useGlobalPipes(new ValidationPipe());
+  app.enableShutdownHooks();
 
   const config = new DocumentBuilder()
     .setTitle('Chinook OpenAPI')

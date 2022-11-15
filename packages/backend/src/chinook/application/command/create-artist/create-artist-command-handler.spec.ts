@@ -1,5 +1,5 @@
 import { CreateArtistCommandHandler } from './create-artist-command-handler';
-import { InmemoryArtistRepository } from '../../../infrastructure/persistence/inmemory-artist-repository';
+import { InMemoryArtistRepository } from '../../../infrastructure/persistence/in-memory-artist-repository';
 import { ArtistRepository } from '../../../domainmodel/artist/artist-repository';
 import { Artist } from '../../../domainmodel/artist/artist';
 import { CreateArtistCommand } from './create-artist-command';
@@ -9,7 +9,7 @@ describe('CreateArtistCommandHandler', () => {
   let createArtistCommandHandler: CreateArtistCommandHandler;
 
   beforeEach(() => {
-    artistRepository = new InmemoryArtistRepository();
+    artistRepository = new InMemoryArtistRepository();
     createArtistCommandHandler = new CreateArtistCommandHandler(
       artistRepository,
     );
@@ -17,7 +17,7 @@ describe('CreateArtistCommandHandler', () => {
 
   it('should throw an exception if an artist with the same name already exists', async () => {
     const existingArtist = new Artist('existingArtist');
-    await artistRepository.add(existingArtist);
+    await artistRepository.save(existingArtist);
 
     await expect(async () => {
       await createArtistCommandHandler.execute(

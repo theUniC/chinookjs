@@ -21,6 +21,6 @@ export class CreateArtistCommandHandler
     }
 
     artist = new Artist(artistName);
-    await this.artistRepository.add(artist);
+    await this.artistRepository.save(artist);
   }
 }

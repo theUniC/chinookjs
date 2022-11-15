@@ -1,10 +1,10 @@
 import { ArtistRepository } from '../../domainmodel/artist/artist-repository';
 import { Artist } from '../../domainmodel/artist/artist';
 
-export class InmemoryArtistRepository implements ArtistRepository {
+export class InMemoryArtistRepository implements ArtistRepository {
   private artists: Artist[] = [];
 
-  add(artist: Artist): Promise<void> {
+  save(artist: Artist): Promise<void> {
     artist.id = this.artists.length + 1;
     this.artists.push(artist);
     return Promise.resolve(undefined);

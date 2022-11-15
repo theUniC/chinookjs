@@ -2,7 +2,11 @@ import { Artist } from 'src/chinook/domainmodel/artist/artist';
 import { ArtistRepository } from '../../domainmodel/artist/artist-repository';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@mikro-orm/nestjs';
-import { EntityManager, EntityRepository } from '@mikro-orm/core';
+import {
+  EntityManager,
+  EntityRepository,
+  TransactionContext,
+} from '@mikro-orm/core';
 
 @Injectable()
 export class MikroormArtistRepository implements ArtistRepository {
@@ -12,9 +16,8 @@ export class MikroormArtistRepository implements ArtistRepository {
     private readonly artistRepository: EntityRepository<Artist>,
   ) {}
 
-  async add(artist: Artist): Promise<void> {
-    this.em.persist(artist);
-    await this.em.flush();
+  async save(artist: Artist): Promise<void> {
+    await this.em.persistAndFlush(artist);
   }
 
   async all(offset: number, limit: number): Promise<Artist[]> {
@@ -22,7 +25,7 @@ export class MikroormArtistRepository implements ArtistRepository {
   }
 
   async byId(id: number): Promise<Artist | null> {
-    return await this.artistRepository.findOne({ id });
+    return await this.em.findOne(Artist, { id });
   }
 
   async byName(name: string): Promise<Artist | null> {

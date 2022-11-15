@@ -1,6 +1,6 @@
 import { ArtistRepository } from '../../../domainmodel/artist/artist-repository';
 import { GetArtistByIdQueryHandler } from './get-artist-by-id.query.handler';
-import { InmemoryArtistRepository } from '../../../infrastructure/persistence/inmemory-artist-repository';
+import { InMemoryArtistRepository } from '../../../infrastructure/persistence/in-memory-artist-repository';
 import { GetArtistByIdQuery } from './get-artist-by-id.query';
 import { Artist } from '../../../domainmodel/artist/artist';
 
@@ -9,7 +9,7 @@ describe('GetArtistByIdQueryHandler', () => {
   let getArtistByIdQueryHandler: GetArtistByIdQueryHandler;
 
   beforeEach(() => {
-    artistRepository = new InmemoryArtistRepository();
+    artistRepository = new InMemoryArtistRepository();
     getArtistByIdQueryHandler = new GetArtistByIdQueryHandler(artistRepository);
   });
 
@@ -21,7 +21,7 @@ describe('GetArtistByIdQueryHandler', () => {
   });
 
   it('should return a given artist by id', async () => {
-    await artistRepository.add(new Artist('test'));
+    await artistRepository.save(new Artist('test'));
     const artist = await getArtistByIdQueryHandler.execute(
       new GetArtistByIdQuery(1),
     );

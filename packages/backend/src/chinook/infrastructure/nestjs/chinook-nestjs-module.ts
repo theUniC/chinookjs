@@ -11,17 +11,21 @@ import { GetArtistByIdQueryHandler } from '../../application/query/get-artist-by
 import { ArtistResolver } from './graphql/resolvers/artist.resolver';
 import { MikroOrmModule } from '@mikro-orm/nestjs';
 import { MikroormArtistRepository } from '../persistence/mikroorm-artist-repository';
+import { PutArtistController } from './controllers/artist/put-artist.controller';
+import { ChangeArtistNameCommandHandler } from '../../application/command/change-artist-name/change-artist-name-command-handler';
 
 const controllers = [
   GetAllArtistsController,
   PostArtistsController,
   GetArtistController,
+  PutArtistController,
 ];
 
 const messageHandlers = [
   CreateArtistCommandHandler,
   GetAllArtistsQueryHandler,
   GetArtistByIdQueryHandler,
+  ChangeArtistNameCommandHandler,
 ];
 
 const graphqlResolvers = [ArtistResolver];

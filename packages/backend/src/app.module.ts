@@ -10,7 +10,9 @@ import { MikroOrmModule } from '@mikro-orm/nestjs';
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    MikroOrmModule.forRoot({ autoLoadEntities: true }), // The rest of configuration comes from environment variables
+    MikroOrmModule.forRoot({
+      autoLoadEntities: true,
+    }), // The rest of configuration comes from environment variables
     GraphQLModule.forRoot({
       driver: ApolloDriver,
       autoSchemaFile: join(process.cwd(), 'resources/graphql/schema.gql'),
