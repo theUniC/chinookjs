@@ -31,4 +31,8 @@ export class MikroormArtistRepository implements ArtistRepository {
   async byName(name: string): Promise<Artist | null> {
     return await this.artistRepository.findOne({ name });
   }
+
+  async remove(artist: Artist): Promise<void> {
+    return await this.artistRepository.removeAndFlush(artist);
+  }
 }

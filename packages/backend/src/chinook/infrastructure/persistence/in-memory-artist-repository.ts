@@ -7,7 +7,7 @@ export class InMemoryArtistRepository implements ArtistRepository {
   save(artist: Artist): Promise<void> {
     artist.id = this.artists.length + 1;
     this.artists.push(artist);
-    return Promise.resolve(undefined);
+    return Promise.resolve();
   }
 
   all(offset: number, limit: number): Promise<Artist[]> {
@@ -32,5 +32,10 @@ export class InMemoryArtistRepository implements ArtistRepository {
     }
 
     return Promise.resolve(artist);
+  }
+
+  async remove(artist: Artist): Promise<void> {
+    this.artists = this.artists.filter((a) => a.id !== artist.id);
+    return Promise.resolve();
   }
 }

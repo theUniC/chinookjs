@@ -5,4 +5,5 @@ export interface ArtistRepository {
   save(artist: Artist): Promise<void>;
   all(offset: number, limit: number): Promise<Artist[]>;
   byName(name: string): Promise<Artist | null>;
+  remove(artist: Artist): Promise<void>;
 }

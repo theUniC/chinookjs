@@ -13,6 +13,7 @@ import { MikroOrmModule } from '@mikro-orm/nestjs';
 import { MikroormArtistRepository } from '../persistence/mikroorm-artist-repository';
 import { PutArtistController } from './controllers/artist/put-artist.controller';
 import { ChangeArtistNameCommandHandler } from '../../application/command/change-artist-name/change-artist-name-command-handler';
+import { RemoveArtistCommandHandler } from '../../application/command/remove-artist/remove-artist-command-handler';
 
 const controllers = [
   GetAllArtistsController,
@@ -26,6 +27,7 @@ const messageHandlers = [
   GetAllArtistsQueryHandler,
   GetArtistByIdQueryHandler,
   ChangeArtistNameCommandHandler,
+  RemoveArtistCommandHandler,
 ];
 
 const graphqlResolvers = [ArtistResolver];
